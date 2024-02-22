@@ -3,15 +3,25 @@
     box-sizing: border-box;
 }
 
-body {
+/*May be necessary to set width & height here for alignment to work
+properly later, not sure yet*/
+html, body {
     font-family: Zilla Slab, Yaldevi, serif;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    padding: 20px 0px 20px 0px;
 }
 
 .inline-block {
     display: inline-block;
 
 }
-
+h1 {
+    text-align: center;
+}
 
 .logo {
     width: 40%;
@@ -36,6 +46,12 @@ nav li {
 
 h4 {
     font-size: 24px;
+    text-align: center;
+}
+
+.imgPreview img{
+    display: block;
+    margin: auto;
 }
 /*Grid Structure*/
 
@@ -55,8 +71,8 @@ h4 {
 }
 .heroGrid {
     display:grid;
-    outline-style: dotted;
-    outline-color: blue;
+    /*outline-style: dotted;
+    outline-color: blue;*/
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -87,8 +103,17 @@ h4 {
 
 .skill {
     width: 33%;
-    outline-style: dotted;
-    outline-color: red;
+    /*outline-style: dotted;
+    outline-color: red;*/
+}
+
+.skill img {
+ display:block;   
+ margin: auto;
+}
+
+.skill h3 {
+    text-align: center;
 }
 
 .workGrid img {
@@ -141,8 +166,8 @@ h4 {
 .workGrid {
     display: grid;
     /*height: auto*/
-    outline-style: dotted;
-    outline-color: blue;
+    /*outline-style: dotted;
+    outline-color: blue;*/
     grid-template-rows: 15% 30% 45% 10%; /*repeat(4, 1fr);*/
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -165,7 +190,7 @@ footer {
 footer ul {
     display: inline-block;
     vertical-align: top;
-    padding: 10px 45%;
+
 }
 
 footer li {
@@ -177,8 +202,11 @@ button {
     border: 1px solid black;
     padding: 3px 5px 3px 5px;
     cursor: pointer;
+    display: block;
+    margin: auto;
 }
 
+/*It seems that adding 'px' is necessary in conjunction with meta tag in HTML*/
 @media only screen and (max-width: 600px) {
     .heroGrid {
         display:grid;
