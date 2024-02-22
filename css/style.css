@@ -1,3 +1,7 @@
+/*Without the following code, there is a large right margin.*/
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: Zilla Slab, Yaldevi, serif;
@@ -5,18 +9,17 @@ body {
 
 .inline-block {
     display: inline-block;
-    vertical-align: bottom;
 
 }
 
 
 .logo {
     width: 40%;
-    padding: 10px 5px 10px 5px}
+    margin: auto}
 
 nav {
     width: 100%;
-    padding: 1%;
+    margin: auto;
     background-color: #DDDBCB;
 }
 
@@ -26,9 +29,13 @@ ul {
     margin-left: auto;
 }
 
-header li {
+nav li {
     font-size: 30px;
     padding: inherit;
+}
+
+h4 {
+    font-size: 24px;
 }
 /*Grid Structure*/
 
@@ -70,7 +77,6 @@ header li {
     width: 50%;
     height: 50%;
 }
-
 
 .flexContainer {
     display: flex;
@@ -173,7 +179,23 @@ button {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600) {
+@media only screen and (max-width: 600px) {
+    .heroGrid {
+        display:grid;
+        outline-style: dotted;
+        outline-color: blue;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "imgPreview"
+            "selfPreview"
+            "workPreview"
+            "skillsPreview"
+        ;
+        align-items: center;
+        justify-items: center;
+    }
+    
     .flexContainer {
         display: grid;
         flex-direction: column;
